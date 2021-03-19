@@ -16,5 +16,30 @@ var app = new Vue({
 
             "img/img_4.jpg"
         ]
+    },
+
+    methods: {
+
+        prewPhoto: function() {
+
+            this.currentPhoto -= 1;
+
+            if (this.currentPhoto < 0) {
+
+                this.currentPhoto = (this.photos.length - 1 );
+            }
+        },
+
+        nextPhoto: function() {
+
+            this.currentPhoto += 1;
+
+            if (this.currentPhoto > (this.photos.length - 1)) {
+
+                this.currentPhoto = 0;
+            }
+
+                
+        }
     }
 })
