@@ -18,6 +18,15 @@ var app = new Vue({
         ]
     },
 
+    created: function() {
+
+        setInterval(() => {
+
+            this.nextPhoto();
+
+        }, 3000)
+    },
+
     methods: {
 
         prewPhoto: function() {
@@ -39,7 +48,7 @@ var app = new Vue({
                 this.currentPhoto = 0;
             }
 
-                
         }
+
     }
 })

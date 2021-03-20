@@ -5,46 +5,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <title>Vue Slide</title>
+    <title>Vue Slider</title>
 </head>
 
 <body>
 
     <div id="root" class="container">
 
-            <div class="prew" @click="prewPhoto">
-    
-                <i class="fas fa-chevron-left"></i>
-    
-            </div>
-    
-            <div class="slider">
-    
-                <div class="images">
-        
-                    <img :src="photos[currentPhoto]">
-        
-                </div>
-    
-            </div>
-    
-            <div class="next" @click="nextPhoto">
-    
-                <i class="fas fa-chevron-right"></i>
-    
+        <div class="prew" @click="prewPhoto">
+
+            <i class="fas fa-chevron-left"></i>
+
+        </div>
+
+        <div class="slider">
+
+            <div class="images">
+
+                <img :src="photos[currentPhoto]">
+
             </div>
 
-            <div class="nav_circle">
-    
-                <i class="fas fa-circle"></i>
-        
-            </div>
-                
-            </div>
-    
+        </div>
+
+        <div class="next" @click="nextPhoto">
+
+            <i class="fas fa-chevron-right"></i>
+
+        </div>
+
+        <div class="nav_circle">
+
+            <i class="fas fa-circle" :class="(index == currentPhoto) ? 'active' : null" v-for="(photo, index) in photos" @click="{{currentPhoto = index}}"></i>
+
+        </div>
+
+        <!-- <div class="slider_control">
+
+            <i class="far fa-play-circle"></i>
+
+            <i class="far fa-pause-circle"></i>
+
+        </div> -->
+
+    </div>
+
     </div>
 
 
@@ -55,13 +65,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
